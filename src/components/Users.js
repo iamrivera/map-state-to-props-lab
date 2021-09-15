@@ -8,7 +8,7 @@ class Users extends Component {
         <ul>
           Users!
           {this.props.users.map((user,idx) => <li key={idx}>{user.username}</li>)}
-          {<p>{this.props.users.length}</p>}
+          {<p>{this.props.userCount}</p>}
         </ul>
       </div>
     );
@@ -18,7 +18,8 @@ class Users extends Component {
 //add mapStateToProps here
 const mapStateToProps = (state) => {
   return {
-    users: state.users
+    users: state.users,
+    userCount: state.users.length
   };
 };
 
